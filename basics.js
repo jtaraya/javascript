@@ -1,185 +1,83 @@
-//ARITHMETIC OPERATORS
+// Variables
+// They cannot be a reserved keyword
+// They should be meaningfuland descriptive names.
+// the variables cannot start with a Number.
+//They cannot contain a space or hyphen.
+//They are case censitive.
+// Use camel notation eg. let firstName;
+let name = 'Jacob'; // String Literal
+console.log(name);
+let firstName = 'Jacob' ;
+let lastName = 'Taraya';
+let nickName = 'Capra';
+console.log(firstName , lastName)
 
-//It will take two operands ie. w and z
-let w = 10;
-let z = 3;
+//constant cannot change but let can
+const interestRate = 0.3;
+console.log(interestRate)
 
-// (w + z) this is an expression in javascript
-// an expression produces a value.
+//typeOf is areserved word.
 
-// console.log(w + z); 
-// console.log(w - z); 
-// console.log(w * z);
-// console.log(w / z);
-// console.log(w % z); // % reminder of division
-// console.log(w ** z); // The exponentiation ( ** ) operator returns the result of raising the first operand to the power of the second operand
+//Primitive types
+let word = 'say'; // 1. String literal
+let age = 39; // 2. Number Literal
+let isApproved = true; // 3. boolean Literal (true and false are reserved)
+let secondName = undefined; // 4. undefined
+let selectedColor = null; // 5. if user has no selected colour use null.
+let symbol = 'dollar';
 
-//Increment (++)
-//console.log(w++);
-// console.log(w);
+//Reference Types
+// Object , Array , Function
+// the {} is what we call an Object literal
 
-//Decrement (++)
-//console.log(--w);
+let person = { 
+    name: 'Capra' ,
+    age : 39
+}
+console.log(person);
 
-// -ASSIGNMENT OPERATORS
+//to change or access a property eg. a person. 2 ways
+// 1. Dot Notaion
+person.name ='Jason';
+console.log(person.name);
 
-// let q = 10;
+//2. Bracket Notation
+person['name'] = 'Jabali';
+console.log(person['name']);
 
-// q = q + 5;
-// q += 5;
+let selection = 'name';
+person[selection] = 'Belinda';
+console.log(person.name);
 
-// q = q * 5;
-// q *= 5;
+//ARRAYS
+//An array is a data structure that we use to represent a list of items
 
-// COMPARISON OPERATORS
-
-let e = 1;
-
-//Relational Operators
-
-console.log(e > 0); // you get true ( a boolean)
-console.log(e >= 1); // you get true
-console.log(e < 1); // you get false
-console.log(e <= 1); // you get true
-
-//Equality Operators
-
-console.log(e === 1); // (Strict Equality Operator)===equals to .you get true
-console.log(e == 1); // (Lose Equality Operator) ==equals to .you get true
-console.log(e !== 1); // !==Not equals to . you get false
-
-//Strict Equality Operator (Type  + Value)
-console.log(1 === 1); // Compares Type  + Value. you get true
-console.log('1' === 1); // Compares Type  + Value.type is a string so you get false
-
-// Lose Equality Operator (It will convert the right side to left side then Checks if Values are equal)
-console.log(1 == 1); //you get true
-console.log('1' == 1); //you get true
-console.log(true == 1); //you get true
-
-//TERNARY OR CONDITIONAL OPERATORS
-
-//If a customer has more than 100 points.
-//They are a 'gold' customer. Otherwise they are a 'silver 'customer.
-
-let points = 101;
-let type = points > 100 ? 'gold' : 'silver';
-console.log(type);
-
-//LOGICAL OPERATORS
-
-//Logical  AND (&&)
-
-//Returns TRUE if both operands are TRUE
-console.log(true && true);  //you get true
-console.log(false && true);  //you get false
-console.log(false && false);  //you get false
-
-//Real Life Example
-let highIncome = true;
-let goodCreditScore = true;
-let eligibleForLoan = highIncome && goodCreditScore;
-
-console.log('Eligible' , eligibleForLoan); //you get true
-
-//Logical  OR (||)
-
-//Returns TRUE if one of the operands is TRUE
-let highCash = false;
-let goodScore = true;
-let eligibleLoan = highIncome || goodCreditScore;
-
-console.log(eligibleLoan); //you get true
-
-//NOT (!)
-
-//Returns TRUE if one of the operands is TRUE
-
-let applicationRefused = !eligibleForLoan;
-
-console.log('Application Refused' , applicationRefused); //you get false
-
-//LOGICAL OPERATORS WITH NON-BOOLEANS
-
-// false || true (we get true)
-// false || 'Taraya' (we get Taraya)
-// false || 1 (we get 1)
-
-// If the operand is not a boolean true or false.
-//It will be interpreted as truthy or falsy
-
-//Falsy (false) has the values (undefined, null, 0,false,'',NaN)
-// Anything that is not Falsy -> its Truthy
-
-// false || 1 || 2 (we get 1) 
-// After it gets Truthy in 1. It doesn't continue. (short-circuiting)
-
-//Example if a client picks a colour
+let selectedColors = ['red' , 'blue'];
+selectedColors[2] = 'green';
+console.log(selectedColors.length); 
+//console.log(selectedColors[0]); 
+//each element has an index which determines the position in the array e. 0 = red and 1 = blue
 
 
-let userColor = 'red' ;
-let defaultColor = 'blue';
-let currentColor = userColor || defaultColor;
+//FUNCTIONS = fundamental building blocks is javascript
+// Functions a set of statements that performs a task or calculate a value
 
-console.log(currentColor); // you get red. if instead of red its undefined you get blue.
+//PERFORMING A TASK
 
+function greet (name, lastName) { // name is a parameter of the greet function
+    console.log('Hello ' + name + ' ' + lastName);
+}
 
-//BITWISE OERATORS
-//(Google decimal to binary converter)
-// 1 Bite = 00000001 Bit
-// 2 Bite = 00000010 Bit
-// 3 bite = 00000011 bit
-
-// console.log(1 | 2); // Bitwise OR
-// console.log(1 & 2); // Bitwise AND
-
-// Example if someone has permission to Read , Write, Execute
-// 00000100 (Read premission)
-// 00000110 (Write premission)
-// 00000111 (All premission)
-
-const readPermission = 4;
-const writePermission = 2;
-const executePermission = 1;
-
-let myPermission = 0;
-// to get more permissions
-myPermission = myPermission | readPermission | writePermission;
-console.log(myPermission);
-
-let message = (myPermission & readPermission) ? 'yes': 'no'; //TERNARY OR CONDITIONAL OPERATORS
-console.log(message);
-
-//OPERATORS PRECEDENCE
-
-let x = 2 + 3 * 4;
-
-console.log(x); //you get 14
-
-let r = (2 + 3) * 4;
-
-console.log(r); //you get 20
-
-//Quiz
-let t = 10
-let u = (t>10) ? 1 : 0;
-console.log(u); // you get  0
+greet('Leshan', 'Taraya'); // Leshan is an argument to the greet function
+greet('Senteu', 'Taraya');
 
 
-//Exercise
-//Swap the variables
-let i = 'red';
-let o = 'blue';
+//CALCULATING A VALUE
+function square(number) {
+    return number * number ;
+}
 
-//create a new variable
-
-let p = i;
-i = o; // both variables at this point are blue
-o = p; // now they are swapped.
-
-console.log(i);
-console.log(o);
-
+console.log(square(2)); //we have two function calls i.e console.log & square(2)
 
 
 
